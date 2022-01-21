@@ -1,6 +1,6 @@
 # Loren Forest
 |name| # | pos | ma | st | ag | pa | av | skills | uspp | inj | value | 
-|:--|:--|:--|-- |--  |--  |-- | -- | -- |:--| -- |--  |-- | 
+|:--|:--|:--|--|--|--|--|--|--|:--|--|--| 
 | Granen | 1 | treeman | 2 | 6 | 5+ | 5+ | 11+ | *Loner(4+), mighty blow (+1), stand firm, thick skull, take root* |  |  | 120k |
 | Caniggiarin | 2 | catcher | 8 | 2 | 2+ | 4+ | 8+ | *Catch, dodge* |  |  | 90k |
 | Maradonasti | 3 | catcher | 8 | 2 | 2+ | 4+ | 8+ | *Catch, dodge* | 3 |  | 90k |
