@@ -363,12 +363,13 @@ td:nth-child(11) {
 
 /* player value */
 td:nth-child(12) {
-  bottom: 10mm;
+  bottom: 4mm;
   left: 2mm;
   width: 18mm;
-  height: 5.5mm;
-  line-height: 5mm;
-  background-image: url(ribbon.svg);
+  height: 15mm;
+  line-height: 15mm;
+  font-size: 1.2em;
+  background-image: url(shield.svg);
   background-repeat: no-repeat;
   background-size: contain;
   font-family: "Quantico";
@@ -378,32 +379,23 @@ td:nth-child(12) {
 /* player value GP-shield background */
 td:nth-child(12)::before,
 td:nth-child(12)::after {
-  background-color: #a40017;
   position: absolute;
   display: block;
-  border: .1em solid white;
   width: 12mm;
-  font-size: 1.2em;
+  font-size: .8em;
 }
 td:nth-child(12)::before {
   content: "⭑GP⭑";
-  height: 4mm;
-  line-height: 4mm;
-  top: -4.3mm;
+  height: 3mm;
+  line-height: 3mm;
+  top: 1.5mm;
   left: 3mm;
-  border-bottom: none;
-  border-top-left-radius: 2mm;
-  border-top-right-radius: 2mm;
 }
 td:nth-child(12)::after {
   content: "⋆⭑⋆";
-  line-height: 0.9em;
-  height: 5mm;
+  line-height: 1em;
+  height: 1mm;
   left: 3mm;
-  bottom: -5.1mm;
+  bottom: 4mm;
   z-index: 1;
-  border: .1em solid white;
-  border-top: none;
-  border-bottom-left-radius: 20mm;
-  border-bottom-right-radius: 20mm;
 }
