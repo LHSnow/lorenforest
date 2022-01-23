@@ -21,6 +21,7 @@
   box-sizing: border-box;
 }
 
+/* ignore empty skills, as the box displays team logo */
 td:not(:nth-child(9)):empty,
 tr:empty,
 tfoot,
@@ -46,6 +47,8 @@ tr {
   margin: 10px;
   overflow: hidden;
 }
+
+/* white border inside card */
 tr::before {
   content: ' ';
   position: absolute;
@@ -63,8 +66,10 @@ td, th {
   display: block;
 }
 
+/* player photo basic rules */
 tr::after {
   content: ' ';
+  /* placeholder */
   background-color: lightblue;
   transform: skewY(-5deg);
   border-bottom: 3mm solid #0e2d62;
@@ -80,6 +85,7 @@ tr::after {
   background-repeat: no-repeat;
 }
 
+/* player photo expects <line-number>.jpg in the same dir */
 tr:nth-child(1)::after {
   background-image: url(1.jpg);
 }
@@ -143,6 +149,8 @@ tr:nth-child(15)::after {
 tr:nth-child(16)::after {
   background-image: url(16.jpg);
 }
+
+/* last-child contains special cases for coach */
 tr:last-child::after {
   background-image: url(coach.jpg);
 }
@@ -168,6 +176,7 @@ tr:last-child td:nth-child(12)::before {
   content: '⭑TV⭑'
 }
 
+/* player number */
 td:nth-child(1) {
   display: block;
   height: 21mm;
@@ -217,6 +226,7 @@ td:nth-child(3) {
   text-transform: uppercase;
 }
 
+/* Characteristics, MA, ST, AG, PA, AV */
 td:nth-child(4),
 td:nth-child(5),
 td:nth-child(6),
@@ -238,11 +248,13 @@ td:nth-child(8) {
   border-bottom: 2mm solid #0e2d62;
 }
 
+/* compensate for lack of border and do not overlay thin white border of card */
 td:nth-child(8) {
   border-bottom: none;
   height: 12mm;
 }
 
+/* Characteristics labels */
 td:nth-child(4)::before,
 td:nth-child(5)::before,
 td:nth-child(6)::before,
@@ -295,6 +307,7 @@ td:nth-child(8) {
   top: 76mm;
 }
 
+/* Skills and injuries box */
 td:nth-child(9)::before,
 td:nth-child(11)::before {
   content: 'SKILLS';
@@ -325,6 +338,7 @@ td:nth-child(11) {
   padding: 1.5mm;
   padding-top: 10mm;
 }
+/* team logo */
 td:nth-child(9)::after {
   content: "";
   position: absolute;
@@ -341,11 +355,13 @@ td:nth-child(9)::after {
   opacity: 0.1;
 }
 
+/* do not paint over team logo */
 td:nth-child(11) {
   background-color: transparent;
   height: 17mm;
 }
 
+/* player value */
 td:nth-child(12) {
   bottom: 10mm;
   left: 2mm;
@@ -359,6 +375,7 @@ td:nth-child(12) {
   text-align: center;
 }
 
+/* player value GP-shield background */
 td:nth-child(12)::before,
 td:nth-child(12)::after {
   background-color: #a40017;
@@ -368,7 +385,6 @@ td:nth-child(12)::after {
   width: 12mm;
   font-size: 1.2em;
 }
-
 td:nth-child(12)::before {
   content: "⭑GP⭑";
   height: 4mm;
