@@ -1,31 +1,47 @@
-# Loren Forest
-|name| # | pos | ma | st | ag | pa | av | skills | uspp | inj | value | 
-|:--|:--|:--|--|--|--|--|--|--|:--|--|--| 
-| Granen | 1 | treeman | 2 | 6 | 5+ | 5+ | 11+ | *Loner(4+), mighty blow (+1), stand firm, thick skull, take root* |  |  | 120k |
-| Caniggiarin | 2 | catcher | 8 | 2 | 2+ | 4+ | 8+ | *Catch, dodge* |  |  | 90k |
-| Maradonasti | 3 | catcher | 8 | 2 | 2+ | 4+ | 8+ | *Catch, dodge* | 3 |  | 90k |
-| Angereriol | 6 | thrower | 7 | 3 | 2+ | 2+ | 8+ | *Pass*, cannoneer, sure hands | (9) |  | 125k |
-| Dahlinion | 8 | wardancer | 8 | 3 | 2+ | 4+ | 8+ | *Blodge, leap*, tackle, sneaky git | 3 |  | 145k |
-| Sukeriel | 9 | wardancer | 8 | 3 | 2+ | 4+ | 8+ | *Blodge, leap*, tackle, strip ball | 1 |  | 145k |
-| Brolinael | 11 | lineman | 7 | 3 | 2+ | 4+ | 8+ | Safe pair of hands, strip ball | 1 |  | 90k |
-| Rekdalior | 12 | lineman | 7 | 3 | 2+ | 4+ | 8+ | |   |  | 70k |
-| Asllanion | 13 | lineman | 7 | 3 | 2+ | 4+ | 8+ | Side step |  |  | 80k |
-| Wynaldariol | 15 | lineman | 7 | 3 | 2+ | 4+ | 8+ |  |   |  | 70k |
-| Lalastari | 16 | lineman | 7 | 3 | 2+ | 4+ | 8+ | Diving catch, defensive | 1 |  | 90k |
+# Blood bowl team cards
 
+Turns a standard html table of a blood bowl team roster into star player style
+cards using mostly CSS, but falling back to SVG where not possible to create
+the shapes needed.
 
-* Value: **1165**k
-* Team Re-rolls: **1** x 50k
-* Treasury: **0**k
-* Dedicated fans: **4**
-* Touchdowns: **9**
-* CAS inflicted: **3**
-* League points: **10**
+Example team: [Loren Forest](http://bubble.swebba.com/lorenforest)
 
-## Games
-| # | against | roster | score | cas | winnings | 
-|:--|:--|:--|-- |--  | --  | 
-|1 | Marcus | Undead  | 1-1 | 1-1 | 45k |
-|2 | Oscar | Lizardmen  | 3-0 | 1-1 | 55k |
-|3 | Kim | Dwarfs  | 2-1 | 1-1 | 55k |
-|4 | Kalle | Dark Elfs  | 3-2 | 0-0 | 55k |
+## HTML expectations
+
+The css expects rows and columns to be in the same format as in the
+example index.html. Table thead and tfoot are optional, but tbody is mandatory.
+
+Column ordering is crucial. Any extra columns must be **last**, after *value*.
+This is to not require the user to add any css classes or other selectors to
+the html. Exported html from excel should work, as long as the column ordering
+is correct.
+
+## Team logo
+
+A team logo can be displayed in the background of the skills and injuries box.
+The css will pick it up if is named `team.svg`. The image will be desaturated
+and in very reduced opacity. For best results, use vector graphics for proper
+scaling.
+
+## Player photos
+
+As long as a player photo exists in the same directory named as
+`<table-row-number>.jpg`, the photo will be displayed on the card.
+For best display result, keep the image roughly square, with a light:ish
+background to not clash too badly with the red/blue backgrounds used.
+
+The row number has nothing to do with the player number. Use player numbers
+above 16 at your leisure. If you do want to strictly tie row numbers to players,
+any jumps in player numbering must be coded as empty rows, `<tr></tr>`. The
+example index.html uses this naming convention.
+
+## Coach exception
+
+The Coach has a separate set of labels for values, see tfoot for ordering.
+These are meant to represent the staff, Team Re-rolls, dedicated fans,
+assistant coaches, cheerleaders and apothecaries.
+
+It has to be the last table row, i.e. row number 17 for a full roster, or 12
+for a starter roster. The coach photo has to be named `coach.jpg` and reside
+in the same directory. The coach "number" refers to NAF membership numbers
+and is thus reduced in size to fit.
