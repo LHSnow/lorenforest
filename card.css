@@ -198,7 +198,7 @@ td:nth-child(3) {
   font-family: "Quantico";
   font-size: 1.4em;
   text-align: center;
-  bottom: 7mm;
+  bottom: 5.5mm;
   right: 10.5mm;
   width: 41mm;
   text-transform: uppercase;
@@ -295,10 +295,17 @@ td:nth-child(16)::before {
   z-index: 5;
 }
 
+td:nth-child(9),
+td:nth-child(16) {
+  right: 10.5mm;
+  color: black;
+  padding: 1.5mm;
+}
+
 td:nth-child(9)::before {
   content: 'SKILLS';
   text-shadow: .1em 0 0 white, 0 .1em 0 white, -.1em 0 0 white, 0 -.1em 0 white;
-  top: 5.2mm;
+  top: 3.2mm;
   left: 1.5mm;
 }
 
@@ -306,16 +313,10 @@ td:nth-child(9)::before {
 td:nth-child(9) {
   background-color: white;
   width: 41mm;
-  height: 33mm;
-  bottom: 14mm;
+  height: 33.5mm;
+  bottom: 11.5mm;
+  padding-top: 7mm;
   font-family: sans-serif;
-}
-
-td:nth-child(9),
-td:nth-child(16) {
-  right: 10.5mm;
-  color: black;
-  padding: 1.5mm;
 }
 
 /* team logo */
@@ -335,11 +336,7 @@ td:nth-child(9)::after {
   opacity: 0.1;
 }
 
-td:nth-child(9) {
-  padding-top: 10mm;
-}
-
-/* player career, unspent spp */
+/* player career */
 td:nth-child(10),
 td:nth-child(11),
 td:nth-child(12),
@@ -350,34 +347,33 @@ td:nth-child(15) {
   color: black;
   right: 3.5mm;
   width: 6.5mm;
-  height: 6mm;
-  line-height: 6mm;
+  height: 6.2mm;
+  line-height: 6.3mm;
   font-size: 1.5em;
   font-family: "Quantico";
   text-align: center;jag
 }
 td:nth-child(10) {
-  bottom: 39.5mm;
+  bottom: 39mm;
 }
 td:nth-child(11) {
-  bottom: 32.5mm;
+  bottom: 32.2mm;
 }
 td:nth-child(12) {
-  bottom: 25.5mm;
+  bottom: 25.3mm;
 }
 td:nth-child(13) {
-  bottom: 18.5mm;
+  bottom: 18.4mm;
 }
 td:nth-child(14) {
   bottom: 11.5mm;
 }
 td:nth-child(15) {
-  border-top-left-radius: 2mm;
   border-bottom-right-radius: 5mm;
-  width: 8mm;
+  width: 9mm;
   bottom: 3.4mm;
   right: 3.4mm;
-  height: 7mm;
+  height: 7.6mm;
 }
 
 /* career labels */
@@ -428,7 +424,7 @@ td:nth-child(16) {
   font-family: "Quantico";
   width: 22.5mm;
   height: 10mm;
-  bottom: 10mm;
+  bottom: 7.5mm;
 }
 
 td:nth-child(16)::before {
