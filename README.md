@@ -6,7 +6,16 @@ the shapes needed.
 
 Example team: [Loren Forest](http://bubble.swebba.com/lorenforest)
 
-## HTML expectations
+## Usage
+
+1. Clone/download the repository
+2. Edit the table in `index.html` to match your team status
+3. Replace images 1-16 with photos of your own team players
+4. Replace team.svg with your team logo
+5. Replace coach.jpg with a picture of your coach miniature (or yourself!)
+6. Open the index.html file in any web browser
+
+### HTML expectations
 
 The css expects rows and columns to be in the same format as in the
 example index.html. Table thead and tfoot are optional, but tbody is mandatory.
@@ -16,14 +25,14 @@ This is to not require the user to add any css classes or other selectors to
 the html. Exported html from excel should work, as long as the column ordering
 is correct.
 
-## Team logo
+### Team logo
 
 A team logo can be displayed in the background of the skills and injuries box.
 The css will pick it up if is named `team.svg`. The image will be desaturated
 and in very reduced opacity. For best results, use vector graphics for proper
 scaling.
 
-## Player photos
+### Player photos
 
 As long as a player photo exists in the same directory named as
 `<table-row-number>.jpg`, the photo will be displayed on the card.
@@ -35,7 +44,7 @@ above 16 at your leisure. If you do want to strictly tie row numbers to players,
 any jumps in player numbering must be coded as empty rows, `<tr></tr>`. The
 example index.html uses this naming convention.
 
-## Coach exception
+### Coach exception
 
 The Coach has a separate set of labels for values, see tfoot for ordering.
 These are meant to represent the staff, Team Re-rolls, dedicated fans,
