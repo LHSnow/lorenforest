@@ -21,6 +21,13 @@
   box-sizing: border-box;
 }
 
+*::before,
+*::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
 /* ignore empty skills, as the box displays team logo */
 td:not(:nth-child(9)):empty,
 tr:empty,
@@ -50,9 +57,6 @@ tr {
 
 /* white border inside card */
 tr::before {
-  content: ' ';
-  position: absolute;
-  display: block;
   border: .4mm solid white;
   top: 3mm;
   left: 3mm;
@@ -69,7 +73,7 @@ td, th {
 /* player photo basic rules */
 tr::after {
   content: ' ';
-  /* placeholder */
+  /* placeholder for non-existent image */
   background-color: lightblue;
   transform: skewY(-5deg);
   border-bottom: 3mm solid #0e2d62;
@@ -150,32 +154,6 @@ tr:nth-child(16)::after {
   background-image: url(16.jpg);
 }
 
-/* last-child contains special cases for coach */
-tr:last-child::after {
-  background-image: url(coach.jpg);
-}
-tr:last-child td:nth-child(1) {
-  font-size: 1.3em;
-}
-tr:last-child td:nth-child(4)::before {
-  content: 'RR'
-}
-tr:last-child td:nth-child(5)::before {
-  content: 'DF'
-}
-tr:last-child td:nth-child(6)::before {
-  content: 'AC'
-}
-tr:last-child td:nth-child(7)::before {
-  content: 'CL'
-}
-tr:last-child td:nth-child(8)::before {
-  content: 'AP'
-}
-tr:last-child td:nth-child(12)::before {
-  content: '⭑TV⭑'
-}
-
 /* player number */
 td:nth-child(1) {
   display: block;
@@ -221,8 +199,8 @@ td:nth-child(3) {
   font-size: 1.4em;
   text-align: center;
   bottom: 7mm;
-  right: 3.5mm;
-  width: 48mm;
+  right: 10.5mm;
+  width: 41mm;
   text-transform: uppercase;
 }
 
@@ -307,37 +285,39 @@ td:nth-child(8) {
   top: 76mm;
 }
 
-/* Skills and injuries box */
+/* Skills and injuries headers */
 td:nth-child(9)::before,
-td:nth-child(11)::before {
-  content: 'SKILLS';
+td:nth-child(16)::before {
   color: #a40017;
   font-family: 'Quantico';
   font-weight: 300;
   font-size: 1.2em;
-  text-shadow: .1em 0 0 white, 0 .1em 0 white, -.1em 0 0 white, 0 -.1em 0 white;
-  position: absolute;
-  top: 5.2mm;
-  left: 1.5mm;
   z-index: 5;
 }
 
-td:nth-child(11)::before {
-  content: 'INJURIES'
+td:nth-child(9)::before {
+  content: 'SKILLS';
+  text-shadow: .1em 0 0 white, 0 .1em 0 white, -.1em 0 0 white, 0 -.1em 0 white;
+  top: 5.2mm;
+  left: 1.5mm;
+}
+
+/* skills and injuries box */
+td:nth-child(9) {
+  background-color: white;
+  width: 41mm;
+  height: 33mm;
+  bottom: 14mm;
+  font-family: sans-serif;
 }
 
 td:nth-child(9),
-td:nth-child(11) {
-  background-color: white;
-  width: 48mm;
-  height: 33mm;
-  right: 3.5mm;
-  bottom: 14mm;
+td:nth-child(16) {
+  right: 10.5mm;
   color: black;
-  font-family: sans-serif;
   padding: 1.5mm;
-  padding-top: 10mm;
 }
+
 /* team logo */
 td:nth-child(9)::after {
   content: "";
@@ -355,14 +335,111 @@ td:nth-child(9)::after {
   opacity: 0.1;
 }
 
-/* do not paint over team logo */
-td:nth-child(11) {
-  background-color: transparent;
-  height: 17mm;
+td:nth-child(9) {
+  padding-top: 10mm;
 }
 
-/* player value */
+/* player career, unspent spp */
+td:nth-child(10),
+td:nth-child(11),
+td:nth-child(12),
+td:nth-child(13),
+td:nth-child(14),
+td:nth-child(15) {
+  background-color: white;
+  color: black;
+  right: 3.5mm;
+  width: 6.5mm;
+  height: 6mm;
+  line-height: 6mm;
+  font-size: 1.5em;
+  font-family: "Quantico";
+  text-align: center;jag
+}
+td:nth-child(10) {
+  bottom: 39.5mm;
+}
+td:nth-child(11) {
+  bottom: 32.5mm;
+}
 td:nth-child(12) {
+  bottom: 25.5mm;
+}
+td:nth-child(13) {
+  bottom: 18.5mm;
+}
+td:nth-child(14) {
+  bottom: 11.5mm;
+}
+td:nth-child(15) {
+  border-top-left-radius: 2mm;
+  border-bottom-right-radius: 5mm;
+  width: 8mm;
+  bottom: 3.4mm;
+  right: 3.4mm;
+  height: 7mm;
+}
+
+/* career labels */
+td:nth-child(10)::after,
+td:nth-child(11)::after,
+td:nth-child(12)::after,
+td:nth-child(13)::after,
+td:nth-child(14)::after,
+td:nth-child(15)::after {
+  background-color: #0e2d62;
+  position: absolute;
+  font-family: "Quantico";
+  font-size: .6em;
+  text-shadow: none;
+  transform: rotate(-90deg);
+  letter-spacing: 0;
+  position: absolute;
+  right: -2.1em;
+  bottom: 1.5mm;
+  width: 7mm;
+  z-index: 20;
+  color: white;
+  line-height: 3mm;
+}
+td:nth-child(10)::after {
+  content: 'C'
+}
+td:nth-child(11)::after {
+  content: 'TD'
+}
+td:nth-child(12)::after {
+  content: 'CAS'
+}
+td:nth-child(13)::after {
+  content: 'MVP'
+}
+td:nth-child(14)::after {
+  content: 'USPP';
+}
+td:nth-child(15)::after {
+  content: 'SPP';
+  left: -2.1em;
+  bottom: 2.7mm;
+}
+
+/* injuries and treasury */
+td:nth-child(16) {
+  font-family: "Quantico";
+  width: 22.5mm;
+  height: 10mm;
+  bottom: 10mm;
+}
+
+td:nth-child(16)::before {
+  content: 'INJURIES';
+  left: -17mm;
+  top: 1.2mm;
+}
+
+
+/* player value */
+td:nth-child(17) {
   bottom: 4mm;
   left: 2mm;
   width: 18mm;
@@ -377,25 +454,72 @@ td:nth-child(12) {
 }
 
 /* player value GP-shield background */
-td:nth-child(12)::before,
-td:nth-child(12)::after {
+td:nth-child(17)::before,
+td:nth-child(17)::after {
   position: absolute;
   display: block;
   width: 12mm;
   font-size: .8em;
 }
-td:nth-child(12)::before {
+td:nth-child(17)::before {
   content: "⭑GP⭑";
   height: 3mm;
   line-height: 3mm;
   top: 1.5mm;
   left: 3mm;
 }
-td:nth-child(12)::after {
+td:nth-child(17)::after {
   content: "⋆⭑⋆";
   line-height: 1em;
   height: 1mm;
   left: 3mm;
   bottom: 4mm;
   z-index: 1;
+}
+
+/* last-child contains special cases for coach */
+tr:last-child::after {
+  background-image: url(coach.jpg);
+}
+tr:last-child td:nth-child(1) {
+  font-size: 1.3em;
+}
+tr:last-child td:nth-child(4)::before {
+  content: 'RR'
+}
+tr:last-child td:nth-child(5)::before {
+  content: 'DF'
+}
+tr:last-child td:nth-child(6)::before {
+  content: 'AC'
+}
+tr:last-child td:nth-child(7)::before {
+  content: 'CL'
+}
+tr:last-child td:nth-child(8)::before {
+  content: 'AP'
+}
+tr:last-child td:nth-child(17)::before {
+  content: '⭑TV⭑'
+}
+tr:last-child td:nth-child(10)::after {
+  content: 'W'
+}
+tr:last-child td:nth-child(11)::after {
+  content: 'D'
+}
+tr:last-child td:nth-child(12)::after {
+  content: 'L'
+}
+tr:last-child td:nth-child(13)::after {
+  content: 'TD'
+}
+tr:last-child td:nth-child(14)::after {
+  content: "CAS";
+}
+tr:last-child td:nth-child(15)::after {
+  content: "PTS";
+}
+tr:last-child td:nth-child(16)::before {
+  content: 'TREASURY';
 }
