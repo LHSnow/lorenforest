@@ -310,7 +310,7 @@ td:nth-child(9) {
 td:nth-child(9)::before {
   content: 'SKILLS';
   text-shadow: .1em 0 0 white, 0 .1em 0 white, -.1em 0 0 white, 0 -.1em 0 white;
-  top: 6.5mm;
+  top: 3mm;
   left: 1.5mm;
 }
 
@@ -318,9 +318,9 @@ td:nth-child(9)::before {
 td:nth-child(9) {
   background-color: white;
   width: 41mm;
-  height: 40.5mm;
-  top: 58mm;
-  padding-top: 11mm;
+  height: 37mm;
+  top: 61.5mm;
+  padding-top: 8mm;
   font-family: sans-serif;
 }
 
@@ -488,7 +488,7 @@ tr:last-child td:nth-child(3) {
   width: 55mm;
 }
 tr:last-child td:nth-child(9) {
-  height: 31mm;
+  height: 27.6mm;
 }
 tr:last-child td:nth-child(4)::before {
   content: 'RR';
