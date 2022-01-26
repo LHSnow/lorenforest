@@ -48,7 +48,8 @@ example index.html uses this naming convention.
 
 The Coach has a separate set of labels for values, see tfoot for ordering.
 These are meant to represent the staff, Team Re-rolls, dedicated fans,
-assistant coaches, cheerleaders and apothecaries.
+assistant coaches, cheerleaders and apothecaries, as well as the league or
+tournament standings.
 
 It has to be the last table row, i.e. row number 17 for a full roster, or 12
 for a starter roster. The coach photo has to be named `coach.jpg` and reside

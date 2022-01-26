@@ -1,3 +1,8 @@
+:root {
+  --blue: #0e2d62;
+  --red: #a40017;
+}
+
 @media print {
   body {
     font-size: 12pt;
@@ -17,7 +22,9 @@
   }
 }
 
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -48,7 +55,7 @@ tr {
   width: 75mm;
   height: 110mm;
   border-radius: 5mm;
-  background-color: #0e2d62;
+  background-color: var(--blue);
   color: white;
   position: relative;
   margin: 10px;
@@ -57,11 +64,11 @@ tr {
 
 /* white border inside card */
 tr::before {
-  border: .4mm solid white;
+  border: .5mm solid white;
   top: 3mm;
   left: 3mm;
-  width: 68mm;
-  height: 103mm;
+  width: 69mm;
+  height: 103.8mm;
   border-radius: 5mm;
 }
 
@@ -76,9 +83,9 @@ tr::after {
   /* placeholder for non-existent image */
   background-color: lightblue;
   transform: skewY(-5deg);
-  border-bottom: 3mm solid #0e2d62;
+  border-bottom: 3mm solid var(--blue);
   border-top: 1mm solid white;
-  box-shadow: inset 0 1mm #0e2d62;
+  box-shadow: inset 0 1mm var(--blue);
   position: absolute;
   width: 54.5mm;
   height: 52mm;
@@ -164,13 +171,13 @@ td:nth-child(1) {
   top: 0mm;
   padding-left: 3mm;
   border-top-left-radius: 5mm;
-  background-color: #a40017;
+  background-color: var(--red);
   font-family: "Graduate";
   font-size: 3.0em;
   color: white;
   line-height: 12mm;
   letter-spacing: -.1em;
-  text-shadow: 2pt 0 3pt #0e2d62, 0 2pt 3pt #0e2d62, 0 -1pt 1pt #0e2d62, -1pt 0 1pt #0e2d62;
+  text-shadow: 2pt 0 3pt var(--blue), 0 2pt 3pt var(--blue), 0 -1pt 1pt var(--blue), -1pt 0 1pt var(--blue);
 }
 
 /* player name */
@@ -182,7 +189,7 @@ td:nth-child(2) {
   transform: skewY(-5deg);
   top: 8mm;
   left: 14mm;
-  text-shadow: 0 2pt 3pt #0e2d62, 2pt 0 3pt #0e2d62, 0 -1pt 1pt #0e2d62, -1pt 0 1pt #0e2d62;
+  text-shadow: 0 2pt 3pt var(--blue), 2pt 0 3pt var(--blue), 0 -1pt 1pt var(--blue), -1pt 0 1pt var(--blue);
   z-index: 12;
 }
 td:nth-child(2)::first-letter {
@@ -190,7 +197,7 @@ td:nth-child(2)::first-letter {
   position: absolute;
   vertical-align: middle;
   letter-spacing: .02em;
-  text-shadow: 0 3pt 3pt #0e2d62, 3pt 0 3pt #0e2d62, 0 -2pt 2pt #0e2d62, -2pt 0 2pt #0e2d62;
+  text-shadow: 0 3pt 3pt var(--blue), 3pt 0 3pt var(--blue), 0 -2pt 2pt var(--blue), -2pt 0 2pt var(--blue);
 }
 
 /* position */
@@ -216,14 +223,14 @@ td:nth-child(8) {
   font-family: "Arbutus";
   font-weight: bold;
   font-size: 3.0em;
-  background-color: #a40017;
-  color: #0e2d62;
+  background-color: var(--red);
+  color: var(--blue);
   line-height: 12mm;
   letter-spacing: -.1em;
   text-shadow: 0 1pt 0 white, 1pt 0 0 white, 0 -1pt 0 white, -1pt 0 0 white;
   transform: skewY(-5deg);
   z-index: 5;
-  border-bottom: 2mm solid #0e2d62;
+  border-bottom: 2mm solid var(--blue);
 }
 
 /* compensate for lack of border and do not overlay thin white border of card */
@@ -238,7 +245,7 @@ td:nth-child(5)::before,
 td:nth-child(6)::before,
 td:nth-child(7)::before,
 td:nth-child(8)::before {
-  background-color: #0e2d62;
+  background-color: var(--blue);
   position: absolute;
   font-family: "Quantico";
   font-size: .4em;
@@ -285,18 +292,16 @@ td:nth-child(8) {
   top: 76mm;
 }
 
-/* Skills and injuries headers */
-td:nth-child(9)::before,
-td:nth-child(16)::before {
-  color: #a40017;
+/* Skills headers */
+td:nth-child(9)::before {
+  color: var(--red);
   font-family: 'Quantico';
   font-weight: 300;
   font-size: 1.2em;
   z-index: 5;
 }
 
-td:nth-child(9),
-td:nth-child(16) {
+td:nth-child(9) {
   right: 10.5mm;
   color: black;
   padding: 1.5mm;
@@ -305,17 +310,17 @@ td:nth-child(16) {
 td:nth-child(9)::before {
   content: 'SKILLS';
   text-shadow: .1em 0 0 white, 0 .1em 0 white, -.1em 0 0 white, 0 -.1em 0 white;
-  top: 3.2mm;
+  top: 6.5mm;
   left: 1.5mm;
 }
 
-/* skills and injuries box */
+/* skills box */
 td:nth-child(9) {
   background-color: white;
   width: 41mm;
-  height: 33.5mm;
-  bottom: 11.5mm;
-  padding-top: 7mm;
+  height: 40.5mm;
+  top: 58mm;
+  padding-top: 11mm;
   font-family: sans-serif;
 }
 
@@ -342,38 +347,45 @@ td:nth-child(11),
 td:nth-child(12),
 td:nth-child(13),
 td:nth-child(14),
-td:nth-child(15) {
+td:nth-child(15),
+td:nth-child(16),
+td:nth-child(17) {
   background-color: white;
   color: black;
   right: 3.5mm;
   width: 6.5mm;
-  height: 6.2mm;
-  line-height: 6.3mm;
-  font-size: 1.5em;
+  height: 4.2mm;
+  line-height: 3.5mm;
+  font-size: 1em;
   font-family: "Quantico";
-  text-align: center;jag
-}
-td:nth-child(10) {
-  bottom: 39mm;
+  text-align: right;
+  padding-right: .3em;
 }
 td:nth-child(11) {
-  bottom: 32.2mm;
+  height: 7mm;
+  line-height: 10mm;
+  bottom: 44.5mm;
 }
 td:nth-child(12) {
-  bottom: 25.3mm;
+  bottom: 39.8mm;
 }
 td:nth-child(13) {
-  bottom: 18.4mm;
+  bottom: 35.0mm;
 }
 td:nth-child(14) {
-  bottom: 11.5mm;
+  bottom: 30.3mm;
 }
 td:nth-child(15) {
-  border-bottom-right-radius: 5mm;
-  width: 9mm;
-  bottom: 3.4mm;
-  right: 3.4mm;
-  height: 7.5mm;
+  bottom: 25.6mm;
+}
+td:nth-child(10) {
+  bottom: 20.9mm;
+}
+td:nth-child(16) {
+  bottom: 16.2mm;
+}
+td:nth-child(17) {
+  bottom: 11.5mm;
 }
 
 /* career labels */
@@ -382,8 +394,10 @@ td:nth-child(11)::after,
 td:nth-child(12)::after,
 td:nth-child(13)::after,
 td:nth-child(14)::after,
-td:nth-child(15)::after {
-  background-color: #0e2d62;
+td:nth-child(15)::after,
+td:nth-child(16)::after,
+td:nth-child(17)::after {
+  background-color: var(--blue);
   position: absolute;
   font-family: "Quantico";
   font-size: .6em;
@@ -391,51 +405,41 @@ td:nth-child(15)::after {
   transform: rotate(-90deg);
   letter-spacing: 0;
   position: absolute;
-  right: -2.1em;
-  bottom: 1.5mm;
-  width: 7mm;
+  text-align: center;
+  right: -4mm;
+  bottom: .5mm;
+  width: 4mm;
   z-index: 20;
   color: white;
   line-height: 3mm;
 }
 td:nth-child(10)::after {
-  content: 'C'
+  content: 'NI'
 }
 td:nth-child(11)::after {
-  content: 'TD'
+  content: 'Comp'
 }
 td:nth-child(12)::after {
-  content: 'CAS'
+  content: 'TD'
 }
 td:nth-child(13)::after {
-  content: 'MVP'
+  content: 'INT'
 }
 td:nth-child(14)::after {
-  content: 'USPP';
+  content: 'CAS'
 }
 td:nth-child(15)::after {
+  content: 'MVP'
+}
+td:nth-child(16)::after {
+  content: '/U';
+}
+td:nth-child(17)::after {
   content: 'SPP';
-  left: -2.1em;
-  bottom: 2.7mm;
 }
 
-/* injuries and treasury */
-td:nth-child(16) {
-  font-family: "Quantico";
-  width: 22.5mm;
-  height: 10mm;
-  bottom: 7.5mm;
-}
-
-td:nth-child(16)::before {
-  content: 'INJURIES';
-  left: -17mm;
-  top: 1.2mm;
-}
-
-
-/* player value */
-td:nth-child(17) {
+/* player/team value */
+td:nth-child(18) {
   bottom: 4mm;
   left: 2mm;
   width: 18mm;
@@ -450,21 +454,21 @@ td:nth-child(17) {
 }
 
 /* player value GP-shield background */
-td:nth-child(17)::before,
-td:nth-child(17)::after {
+td:nth-child(18)::before,
+td:nth-child(18)::after {
   position: absolute;
   display: block;
   width: 12mm;
   font-size: .8em;
 }
-td:nth-child(17)::before {
+td:nth-child(18)::before {
   content: "⭑GP⭑";
   height: 3mm;
   line-height: 3mm;
   top: 1.5mm;
   left: 3mm;
 }
-td:nth-child(17)::after {
+td:nth-child(18)::after {
   content: "⋆⭑⋆";
   line-height: 1em;
   height: 1mm;
@@ -480,42 +484,93 @@ tr:last-child::after {
 tr:last-child td:nth-child(1) {
   font-size: 1.3em;
 }
+tr:last-child td:nth-child(3) {
+  width: 55mm;
+}
+tr:last-child td:nth-child(9) {
+  height: 31mm;
+}
 tr:last-child td:nth-child(4)::before {
-  content: 'RR'
+  content: 'RR';
 }
 tr:last-child td:nth-child(5)::before {
-  content: 'DF'
+  content: 'DF';
 }
 tr:last-child td:nth-child(6)::before {
-  content: 'AC'
+  content: 'AC';
 }
 tr:last-child td:nth-child(7)::before {
-  content: 'CL'
+  content: 'CL';
 }
 tr:last-child td:nth-child(8)::before {
-  content: 'AP'
-}
-tr:last-child td:nth-child(17)::before {
-  content: '⭑TV⭑'
-}
-tr:last-child td:nth-child(10)::after {
-  content: 'W'
+  content: 'AP';
 }
 tr:last-child td:nth-child(11)::after {
-  content: 'D'
+  content: 'W';
 }
 tr:last-child td:nth-child(12)::after {
-  content: 'L'
+  content: 'D';
 }
 tr:last-child td:nth-child(13)::after {
-  content: 'TD'
+  content: 'L';
 }
 tr:last-child td:nth-child(14)::after {
-  content: "CAS";
+  content: "TD";
 }
 tr:last-child td:nth-child(15)::after {
+  content: "CAS";
+}
+tr:last-child td:nth-child(17) {
+  bottom: 20.9mm;
+}
+tr:last-child td:nth-child(17)::after {
   content: "PTS";
 }
+tr:last-child td:nth-child(18)::before {
+  content: '⭑TV⭑'
+}
+
+/* coach treasury */
+tr:last-child td:nth-child(16) {
+  bottom: 4mm;
+  right: 2mm;
+  width: 18mm;
+  height: 15mm;
+  line-height: 15mm;
+  font-size: 1.2em;
+  background-image: url(treasury.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  color: white;
+  font-family: "Quantico";
+  text-align: center;
+  z-index: 0;
+}
+
+/* player value GP-shield background */
+tr:last-child td:nth-child(16)::before,
+tr:last-child td:nth-child(16)::after {
+  position: absolute;
+  display: block;
+  width: 12mm;
+  font-size: .8em;
+}
 tr:last-child td:nth-child(16)::before {
-  content: 'TREASURY';
+  content: "⋆BANK⋆";
+  height: 3mm;
+  line-height: 3.5mm;
+  font-size: .6em;
+  top: 1.5mm;
+  left: 3mm;
+}
+tr:last-child td:nth-child(16)::after {
+  background-color: transparent;
+  transform: none;
+  content: "⋆⭑⋆";
+  line-height: 1em;
+  height: 1mm;
+  left: 3mm;
+  bottom: 4mm;
+  z-index: 1;
 }
