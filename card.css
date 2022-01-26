@@ -27,6 +27,10 @@
 
 *::before,
 *::after {
+  /*
+    ::first-letter wont work in firefox if ::before is set,
+    so set it to none for child(2) but keep it here to DRY
+  */
   content: "";
   position: absolute;
   display: block;
@@ -188,11 +192,16 @@ td:nth-child(2) {
   text-shadow: 0 2pt 3pt var(--blue), 2pt 0 3pt var(--blue), 0 -1pt 1pt var(--blue), -1pt 0 1pt var(--blue);
   z-index: 12;
 }
+td:nth-child(2)::before {
+  /* otherwise ::first-letter wont work in firefox */
+  content: none;
+}
 td:nth-child(2)::first-letter {
   font-size: 2.1em;
-  position: absolute;
+  display: inline;
   vertical-align: middle;
   letter-spacing: .02em;
+  transform: skewY(5deg);
   text-shadow: 0 3pt 3pt var(--blue), 3pt 0 3pt var(--blue), 0 -2pt 2pt var(--blue), -2pt 0 2pt var(--blue);
 }
 
