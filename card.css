@@ -17,9 +17,6 @@
     font-size: 11px;
     line-height: 12px;
   }
-  h1 {
-    font-size: 32px;
-  }
 }
 
 *,
@@ -47,7 +44,6 @@ tbody {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  position: relative;
 }
 
 tr {
@@ -77,7 +73,7 @@ td, th {
   display: block;
 }
 
-/* player photo basic rules */
+/* player photo basics */
 tr::after {
   content: ' ';
   /* placeholder for non-existent image */
@@ -200,7 +196,7 @@ td:nth-child(2)::first-letter {
   text-shadow: 0 3pt 3pt var(--blue), 3pt 0 3pt var(--blue), 0 -2pt 2pt var(--blue), -2pt 0 2pt var(--blue);
 }
 
-/* position */
+/* positional */
 td:nth-child(3) {
   font-family: "Quantico";
   font-size: 1.4em;
@@ -292,7 +288,7 @@ td:nth-child(8) {
   top: 76mm;
 }
 
-/* Skills headers */
+/* skills header */
 td:nth-child(9)::before {
   color: var(--red);
   font-family: 'Quantico';
@@ -477,7 +473,7 @@ td:nth-child(18)::after {
   z-index: 1;
 }
 
-/* last-child contains special cases for coach */
+/* tr:last-child contains special cases for coach */
 tr:last-child::after {
   background-image: url(coach.jpg);
 }
@@ -530,7 +526,7 @@ tr:last-child td:nth-child(18)::before {
   content: '⭑TV⭑'
 }
 
-/* coach treasury */
+/* coach treasury/bank */
 tr:last-child td:nth-child(16) {
   bottom: 4mm;
   right: 2mm;
@@ -548,7 +544,7 @@ tr:last-child td:nth-child(16) {
   z-index: 0;
 }
 
-/* player value GP-shield background */
+/* treasury/bank decorative text/label */
 tr:last-child td:nth-child(16)::before,
 tr:last-child td:nth-child(16)::after {
   position: absolute;
