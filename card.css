@@ -238,6 +238,16 @@ td:nth-child(8) {
   border-bottom: 2mm solid var(--blue);
 }
 
+/* center short characteristics in a smaller box, as in
+when they are likely "1" or one character (without "+")
+to line up nicer vertically */
+tr:last-child td:nth-child(8),
+td:nth-child(4),
+td:nth-child(5) {
+  text-align: center;
+  padding-right: .8em
+}
+
 /* compensate for lack of border and do not overlay thin white border of card */
 td:nth-child(8) {
   border-bottom: none;
