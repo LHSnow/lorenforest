@@ -13,7 +13,7 @@ Example team: [Loren Forest](http://lhsnow.github.io/lorenforest)
 3. Replace images 1-16 with photos of your own team players
 4. Replace team.svg with your team logo
 5. Replace coach.jpg with a picture of your coach miniature (or yourself!)
-6. Open the index.html file in any web browser
+6. [Set it up as a github page](https://pages.github.com/) or open it in any browser
 
 ### HTML expectations
 
