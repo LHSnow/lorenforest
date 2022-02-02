@@ -4,7 +4,7 @@ Turns a standard html table of a blood bowl team roster into star player style
 cards using mostly CSS, but falling back to SVG where not possible to create
 the shapes needed.
 
-Example team: [Loren Forest](http://bubble.swebba.com/lorenforest)
+Example team: [Loren Forest](http://lhsnow.github.io/lorenforest)
 
 ## Usage
 
