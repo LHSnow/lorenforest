@@ -241,6 +241,8 @@ td:nth-child(8) {
 /* center short characteristics in a smaller box, as in
 when they are likely "1" or one character (without "+")
 to line up nicer vertically */
+tr:last-child td:nth-child(6),
+tr:last-child td:nth-child(7),
 tr:last-child td:nth-child(8),
 td:nth-child(4),
 td:nth-child(5) {
